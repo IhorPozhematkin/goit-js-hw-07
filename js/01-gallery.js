@@ -32,6 +32,13 @@ function onClick(e) {
   />
   `);
   instance.show();
+  
+  document.addEventListener("keydown", onEscape, { once: true });
+  function onEscape(event) {
+    if (event.code === "Escape") {
+      instance.close();
+    }
+  }
 }
 
 console.log(galleryItems);
